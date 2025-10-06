@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialU - Your Neighborhood in Your Pocket</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background: #0a0a0a;
+        }
+
+        /* Animated Background */
+        .hero-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            z-index: -1;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Hero Section - Above the fold powerhouse */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 60px;
+            position: relative;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(120deg, #fff 0%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.95);
+            font-weight: 400;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* Phone Mockup - More prominent */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-stack {
+            position: relative;
+            width: 340px;
+            height: 700px;
+        }
+
+        .phone-mockup {
+            width: 340px;
+            height: 700px;
+            background: #1a1a1a;
+            border-radius: 50px;
+            padding: 12px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+            position: absolute;
+            animation: floatPhone 6s ease-in-out infinite;
+        }
+
+        @keyframes floatPhone {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(-2deg); }
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background: #1a1a1a;
+            border-radius: 0 0 20px 20px;
+            z-index: 2;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* App UI Inside Phone */
+        .app-ui {
+            padding: 60px 20px 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .app-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .app-cards {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            overflow: hidden;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            animation: slideCard 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .app-card:nth-child(1) { animation-delay: 0.2s; }
+        .app-card:nth-child(2) { animation-delay: 0.4s; }
+        .app-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes slideCard {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .card-header {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .card-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .card-info h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .card-info p {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .card-body {
+            font-size: 0.9rem;
+            color: #444;
+            margin-bottom: 12px;
+        }
+
+        .card-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .app-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0 10px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 25px 25px 0 0;
+            margin-top: auto;
+        }
+
+        .nav-icon {
+            font-size: 1.6rem;
+            opacity: 0.4;
+            transition: opacity 0.3s;
+        }
+
+        .nav-icon.active {
+            opacity: 1;
+        }
+
+        /* Compact Social Proof Banner */
+        .social-proof-banner {
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(20px);
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        .proof-item {
+            text-align: center;
+            color: white;
+        }
+
+        .proof-number {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .proof-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Features Grid - Tight and Impactful */
+        .features-section {
+            background: white;
+            padding: 80px 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            padding: 32px;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Business CTA - Bold and Eye-catching */
+        .business-cta {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 80px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .business-cta::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent);
+            top: -250px;
+            right: -250px;
+        }
+
+        .business-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .business-info h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .business-info p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .business-benefits {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .business-benefits li {
+            color: white;
+            padding: 12px 0;
+            padding-left: 36px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .business-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #f093fb;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .success-message {
+            display: none;
+            background: #4caf50;
+            color: white;
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Testimonials - Compact Carousel */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 80px 60px;
+        }
+
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #444;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .author-info h4 {
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .author-info p {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Final CTA - Urgent and Bold */
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 100px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent);
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .final-cta p {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 40px;
+        }
+
+        /* Footer - Minimal */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 40px 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 30px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .cta-group {
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+
+            .business-content {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+
+            .testimonial-slider {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .social-proof-banner {
+                padding: 20px 30px;
+            }
+
+            .features-section,
+            .business-cta,
+            .testimonials,
+            .final-cta {
+                padding: 60px 30px;
+            }
+
+            footer {
+                padding: 30px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-bg"></div>
+
+    <!-- Hero Section - Maximum Impact Above Fold -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Neighborhood<br>in Your <span class="highlight">Pocket</span></h1>
+            <p class="hero-subtitle">Connect with locals. Discover hidden gems. Support your community.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Active Users</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Businesses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Connections</span>
+                </div>
+            </div>
+
+            <div class="cta-group">
+                <a href="#download" class="btn btn-primary">
+                    Download Free 📱
+                </a>
+                <a href="how-it-works.html" class="btn btn-secondary">
+                    See How It Works →
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="phone-stack">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="app-ui">
+                            <div class="app-header">
+                                <h3>Discover</h3>
+                                <p>Your neighborhood awaits</p>
+                            </div>
+                            <div class="app-cards">
+                                <div class="app-card">
+                                    <div class="card-header">
+                                        <div class="card-avatar">JD</div>
+                                        <div class="card-info">
+                                            <h4>Java Dreams Café</h4>
+                                            <p>0.3 mi • Coffee Shop</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        20% off all lattes this week!
+                                    </div>
+                                    <span class="card-badge">🔥 Hot Deal</span>
+                                </div>
+                                <div class="app-card">
+                                    <div class="card-header">
+                                        <div class="card-avatar">SK</div>
+                                        <div class="card-info">
+                                            <h4>Sarah K.</h4>
+                                            <p>0.5 mi • Book Club</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        Hiking buddies wanted! 🥾
+                                    </div>
+                                    <span class="card-badge">✨ New Match</span>
+                                </div>
+                            </div>
+                            <div class="app-nav">
+                                <span class="nav-icon active">🏠</span>
+                                <span class="nav-icon">💬</span>
+                                <span class="nav-icon">❤️</span>
+                                <span class="nav-icon">👤</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="social-proof-banner">
+        <div class="proof-item">
+            <span class="proof-number">4.8★</span>
+            <span class="proof-label">App Store Rating</span>
+        </div>
+        <div class="proof-item">
+            <span class="proof-number">Featured</span>
+            <span class="proof-label">Product Hunt</span>
+        </div>
+        <div class="proof-item">
+            <span class="proof-number">#1</span>
+            <span class="proof-label">Local Social</span>
+        </div>
+    </div>
+
+    <!-- Features - Compact Grid -->
+    <section class="features-section">
+        <div class="section-header">
+            <h2>Why You'll Love SocialU</h2>
+            <p>Everything you need to connect locally, all in one app</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>Instant Matches</h3>
+                <p>Our smart algorithm connects you with people and businesses you'll actually vibe with</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💬</span>
+                <h3>Real-Time Chat</h3>
+                <p>No waiting around. Message instantly and make plans on the fly</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h3>Hyperlocal</h3>
+                <p>See what's happening within walking distance. Your neighborhood, amplified</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🏪</span>
+                <h3>Exclusive Deals</h3>
+                <p>Access members-only promotions from local businesses you love</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🔒</span>
+                <h3>Privacy First</h3>
+                <p>Your data stays yours. No creepy tracking or selling your info</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎉</span>
+                <h3>Events & Meetups</h3>
+                <p>Discover local events and activities happening right now</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business CTA -->
+    <section class="business-cta">
+        <div class="business-content">
+            <div class="business-info">
+                <h2>Own a Local Business?</h2>
+                <p>Join 500+ businesses already reaching customers on SocialU</p>
+                <ul class="business-benefits">
+                    <li>Reach customers within 1 mile of your location</li>
+                    <li>Post promotions that actually get seen</li>
+                    <li>Build real relationships with your community</li>
+                    <li>Track engagement and customer insights</li>
+                    <li>Free basic listing • Premium features available</li>
+                </ul>
+            </div>
+            <form class="contact-form" id="businessForm">
+                <div class="success-message" id="successMessage">
+                    ✓ Thanks! We'll contact you within 24 hours
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Business Name *</label>
+                        <input type="text" id="businessName" required placeholder="Your Business">
+                    </div>
+                    <div class="form-group">
+                        <label>Your Name *</label>
+                        <input type="text" id="contactName" required placeholder="John Smith">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="email" required placeholder="you@business.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" id="phone" placeholder="(555) 123-4567">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tell us about your business</label>
+                    <textarea id="message" placeholder="What do you do? What are your goals?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Get Started with SocialU</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>What People Are Saying</h2>
+            <p>Real stories from real community members</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p class="testimonial-text">I've discovered three coffee shops I never knew existed, all within a 10-minute walk. This app is magic!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah M.</h4>
+                        <p>Community Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">As a small business owner, SocialU has been incredible. I can actually reach my neighbors directly!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JR</div>
+                    <div class="author-info">
+                        <h4>James R.</h4>
+                        <p>Coffee Shop Owner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">Finally found my hiking crew! The matching is spot-on. Highly recommend.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MK</div>
+                    <div class="author-info">
+                        <h4>Maria K.</h4>
+                        <p>Regular User</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="download" class="final-cta">
+        <div class="final-cta-content">
+            <h2>Ready to Connect?</h2>
+            <p>Download SocialU and discover your neighborhood like never before</p>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Download Free App</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="#about">About</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2025 SocialU. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('businessForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                businessName: document.getElementById('businessName').value,
+                contactName: document.getElementById('contactName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            this.reset();
+            
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            console.log('Business inquiry submitted:', formData);
+        });
+    </script>
+</body>
+</html>
