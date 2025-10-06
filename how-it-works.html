@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How SocialU Works - Step by Step Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .content-section {
+            padding: 80px 20px;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Step by Step */
+        .step-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .step-container:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .step-visual {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .step-phone {
+            width: 100%;
+            max-width: 350px;
+            height: 700px;
+            background: #1a1a1a;
+            border-radius: 50px;
+            padding: 12px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+
+        .step-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .step-icon {
+            font-size: 5rem;
+            margin-bottom: 30px;
+        }
+
+        .step-details {
+            flex: 1;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .step-details h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .step-details p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .step-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .step-features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #444;
+        }
+
+        .step-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 800;
+        }
+
+        /* Feature Comparison */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .comparison-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .comparison-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .comparison-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .comparison-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+            background: rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .video-placeholder:hover {
+            background: rgba(0,0,0,0.4);
+            transform: scale(1.02);
+        }
+
+        .video-text {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1rem;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #667eea;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #666;
+            line-height: 1.8;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-question:after {
+            content: '−';
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .step-container {
+                flex-direction: column !important;
+                gap: 40px;
+            }
+
+            .step-phone {
+                max-width: 280px;
+                height: 560px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .step-details h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">SocialU</a>
+            <a href="index.html" class="nav-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>How SocialU Works</h1>
+            <p>Discover how easy it is to connect with your local community and support neighborhood businesses</p>
+        </div>
+    </section>
+
+    <!-- Step by Step Guide -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Journey on SocialU</h2>
+                <p>From signup to making connections in minutes</p>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="step-container">
+                <div class="step-visual">
+                    <div class="step-phone">
+                        <div class="step-screen">
+                            <div class="step-icon">📱</div>
+                            <h4 style="font-size: 1.5rem; margin-bottom: 15px;">Create Profile</h4>
+                            <p style="color: #999; text-align: center;">Quick signup with your interests</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-details">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">1</div>
+                    <h3>Create Your Profile in 60 Seconds</h3>
+                    <p>Getting started is incredibly simple. Sign up with your email or Google account, add a photo, and tell us a bit about your interests.</p>
+                    <ul class="step-features">
+                        <li>No lengthy forms or complicated verification</li>
+                        <li>Choose your interests from categories like fitness, food, arts, tech</li>
+                        <li>Set your location to connect with nearby people and businesses</li>
+                        <li>Privacy controls let you choose what others can see</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-container">
+                <div class="step-visual">
+                    <div class="step-phone">
+                        <div class="step-screen">
+                            <div class="step-icon">🔍</div>
+                            <h4 style="font-size: 1.5rem; margin-bottom: 15px;">Discover</h4>
+                            <p style="color: #999; text-align: center;">Browse people & businesses</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-details">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">2</div>
+                    <h3>Discover Your Community</h3>
+                    <p>Browse through profiles of people and businesses in your area. Our smart algorithm shows you the most relevant matches first based on your interests and location.</p>
+                    <ul class="step-features">
+                        <li>See people with shared interests nearby</li>
+                        <li>Discover local businesses offering exclusive deals</li>
+                        <li>Filter by distance, interests, and categories</li>
+                        <li>Save favorites to check back later</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-container">
+                <div class="step-visual">
+                    <div class="step-phone">
+                        <div class="step-screen">
+                            <div class="step-icon">❤️</div>
+                            <h4 style="font-size: 1.5rem; margin-bottom: 15px;">Match</h4>
+                            <p style="color: #999; text-align: center;">Like profiles you're interested in</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-details">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">3</div>
+                    <h3>Like and Match</h3>
+                    <p>When you see someone interesting or a business you'd like to support, tap the heart. When they like you back, it's a match!</p>
+                    <ul class="step-features">
+                        <li>Mutual interest required for connection</li>
+                        <li>Get instant notifications when you match</li>
+                        <li>No awkward cold messages to strangers</li>
+                        <li>Business matches give you access to exclusive promotions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-container">
+                <div class="step-visual">
+                    <div class="step-phone">
+                        <div class="step-screen">
+                            <div class="step-icon">💬</div>
+                            <h4 style="font-size: 1.5rem; margin-bottom: 15px;">Connect</h4>
+                            <p style="color: #999; text-align: center;">Start real conversations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-details">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">4</div>
+                    <h3>Start Meaningful Conversations</h3>
+                    <p>Once matched, dive into real-time messaging. Plan meetups, ask about that hiking trail, or claim that coffee shop deal.</p>
+                    <ul class="step-features">
+                        <li>Real-time messaging with instant delivery</li>
+                        <li>Share photos and locations safely</li>
+                        <li>Read receipts let you know when messages are seen</li>
+                        <li>Report and block features for your safety</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Comparison -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Makes SocialU Different</h2>
+                <p>Not just another social app or marketplace</p>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="comparison-icon">🎯</div>
+                    <h3>Hyperlocal</h3>
+                    <p>Connect only with people and businesses in your actual neighborhood, not across the country</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">🤝</div>
+                    <h3>Dual Purpose</h3>
+                    <p>Make friends AND discover local businesses in one app. No need to switch between platforms</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>Your data isn't sold. No creepy tracking. Just genuine connections with your consent</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">⚡</div>
+                    <h3>Real-Time</h3>
+                    <p>Instant notifications, live messaging, and up-to-date deals. Never miss what's happening</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2>See SocialU in Action</h2>
+            <p>Watch how easy it is to get started</p>
+            <div class="video-container">
+                <div class="video-placeholder" onclick="alert('Video demo coming soon!')">
+                    ▶️
+                    <div class="video-text">Click to watch demo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">Is SocialU really free?</div>
+                    <div class="faq-answer">Yes! SocialU is 100% free for users. We make money by offering premium features to businesses, not by selling your data or showing annoying ads.</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">How do you ensure safety?</div>
+                    <div class="faq-answer">We take safety seriously. All profiles are verified, we have robust reporting and blocking features, and our team monitors for suspicious activity 24/7. Your conversations are private and secure.</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">Can I use SocialU for dating?</div>
+                    <div class="faq-answer">While SocialU isn't exclusively a dating app, many users have made romantic connections! We focus on genuine community connections of all kinds - friendships, activity partners, networking, and yes, dating too.</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">What if there aren't many users in my area yet?</div>
+                    <div class="faq-answer">We're growing fast! You can help by inviting friends and local businesses you love. Early adopters in new areas get special perks and badges to recognize their support.</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">How do businesses get on SocialU?</div>
+                    <div class="faq-answer">Businesses can sign up easily and create profiles for free. They can post promotions, connect with customers, and build their local community. Premium features are available for enhanced visibility.</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">Can I delete my account anytime?</div>
+                    <div class="faq-answer">Absolutely. You have full control over your account and data. You can delete your account anytime from settings, and all your data will be permanently removed.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Join thousands already connecting in their communities</p>
+            <a href="index.html#download" class="btn">Download SocialU Free</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="#about">About</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact</a>
+                <a href="#support">Support</a>
+            </div>
+            <p>&copy; 2025 SocialU. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
