@@ -3,14 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SocialU - Connect Locally, Shop Smarter</title>
-
-
-    <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/UiP3mf/klaviyo.js?company_id=UiP3mf'></script>
-          <script type="text/javascript"> 
-          //Initialize Klaviyo object on page load
-          !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); </script>
-    
+    <title>SocialU - Your Neighborhood in Your Pocket</title>
     <style>
         * {
             margin: 0;
@@ -20,118 +13,173 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.5;
+            color: #1a1a1a;
             overflow-x: hidden;
+            background: #0a0a0a;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 20px 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
+        /* Animated Background */
+        .hero-bg {
+            position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
-            animation: float 20s linear infinite;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            z-index: -1;
         }
 
-        @keyframes float {
-            from { transform: translateY(0); }
-            to { transform: translateY(-100px); }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Hero Section - Above the fold powerhouse */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 60px;
+            position: relative;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
-        .hero .subtitle {
+        .hero h1 .highlight {
+            background: linear-gradient(120deg, #fff 0%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
             font-size: 1.5rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-            font-weight: 300;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.95);
+            font-weight: 400;
         }
 
-        .cta-buttons {
+        .hero-stats {
             display: flex;
-            gap: 20px;
-            justify-content: center;
+            gap: 32px;
+            margin: 32px 0;
             flex-wrap: wrap;
-            margin-bottom: 60px;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            flex-wrap: wrap;
         }
 
         .btn {
             padding: 18px 40px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             border: none;
-            border-radius: 50px;
+            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .btn-primary {
             background: white;
             color: #667eea;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: rgba(255,255,255,0.15);
             color: white;
-            border: 2px solid white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
         .btn-secondary:hover {
-            background: white;
-            color: #667eea;
+            background: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.5);
         }
 
-        .app-preview {
-            max-width: 320px;
-            margin: 0 auto;
+        /* Phone Mockup - More prominent */
+        .hero-visual {
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-stack {
+            position: relative;
+            width: 340px;
+            height: 700px;
         }
 
         .phone-mockup {
-            width: 100%;
-            height: 650px;
+            width: 340px;
+            height: 700px;
             background: #1a1a1a;
             border-radius: 50px;
             padding: 12px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-            position: relative;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+            position: absolute;
+            animation: floatPhone 6s ease-in-out infinite;
+        }
+
+        @keyframes floatPhone {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(-2deg); }
         }
 
         .phone-notch {
@@ -149,256 +197,336 @@
         .phone-screen {
             width: 100%;
             height: 100%;
-            background: #f8f9fa;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
             border-radius: 40px;
             overflow: hidden;
             position: relative;
         }
 
-        /* Mock App UI */
-        .mock-app {
+        /* App UI Inside Phone */
+        .app-ui {
+            padding: 60px 20px 20px;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
 
-        .mock-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 50px 20px 20px;
-            color: white;
+        .app-header {
             text-align: center;
+            color: white;
+            margin-bottom: 24px;
         }
 
-        .mock-header h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
+        .app-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
         }
 
-        .mock-header p {
-            font-size: 0.8rem;
-            opacity: 0.9;
-        }
-
-        .mock-content {
+        .app-cards {
             flex: 1;
-            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
             overflow: hidden;
         }
 
-        .mock-card {
+        .app-card {
             background: white;
             border-radius: 20px;
             padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            animation: slideUp 0.5s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            animation: slideCard 0.5s ease forwards;
+            opacity: 0;
         }
 
-        @keyframes slideUp {
+        .app-card:nth-child(1) { animation-delay: 0.2s; }
+        .app-card:nth-child(2) { animation-delay: 0.4s; }
+        .app-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes slideCard {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateX(-30px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
 
-        .mock-card-header {
+        .card-header {
             display: flex;
-            align-items: center;
             gap: 12px;
             margin-bottom: 12px;
         }
 
-        .mock-avatar {
+        .card-avatar {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-weight: 700;
+            flex-shrink: 0;
         }
 
-        .mock-card-info h4 {
-            font-size: 0.95rem;
-            color: #1a1a1a;
+        .card-info h4 {
+            font-size: 1rem;
             margin-bottom: 2px;
         }
 
-        .mock-card-info p {
-            font-size: 0.75rem;
-            color: #999;
+        .card-info p {
+            font-size: 0.8rem;
+            color: #666;
         }
 
-        .mock-card-body {
-            font-size: 0.85rem;
-            color: #666;
-            line-height: 1.5;
+        .card-body {
+            font-size: 0.9rem;
+            color: #444;
             margin-bottom: 12px;
         }
 
-        .mock-badge {
+        .card-badge {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 6px 14px;
             background: #667eea;
             color: white;
             border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
         }
 
-        .mock-nav {
+        .app-nav {
             display: flex;
             justify-content: space-around;
-            padding: 15px 0;
-            background: white;
-            border-top: 1px solid #eee;
+            padding: 20px 0 10px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 25px 25px 0 0;
+            margin-top: auto;
         }
 
-        .mock-nav-item {
-            font-size: 1.5rem;
-            opacity: 0.5;
+        .nav-icon {
+            font-size: 1.6rem;
+            opacity: 0.4;
             transition: opacity 0.3s;
         }
 
-        .mock-nav-item.active {
+        .nav-icon.active {
             opacity: 1;
         }
 
-        /* Social Proof */
-        .social-proof {
-            background: #f8f9fa;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .stats {
+        /* Compact Social Proof Banner */
+        .social-proof-banner {
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(20px);
+            padding: 20px 60px;
             display: flex;
             justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            position: relative;
         }
 
-        .stat {
-            flex: 1;
-            min-width: 200px;
+        .proof-item {
+            text-align: center;
+            color: white;
         }
 
-        .stat-number {
-            font-size: 3rem;
+        .proof-number {
+            font-size: 2rem;
             font-weight: 800;
-            color: #667eea;
             display: block;
         }
 
-        .stat-label {
-            font-size: 1.1rem;
-            color: #666;
-            margin-top: 10px;
+        .proof-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
-        /* Features */
-        .features {
-            padding: 100px 20px;
+        /* Features Grid - Tight and Impactful */
+        .features-section {
             background: white;
+            padding: 80px 60px;
         }
 
-        .features h2 {
+        .section-header {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #1a1a1a;
+            max-width: 800px;
+            margin: 0 auto 50px;
         }
 
-        .feature-grid {
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .feature-card {
-            padding: 40px;
-            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            padding: 32px;
             border-radius: 20px;
-            transition: all 0.3s ease;
-            background: #f8f9fa;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            display: block;
         }
 
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #1a1a1a;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .feature-card p {
             color: #666;
-            line-height: 1.8;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
-        /* Business Contact Section */
-        .business-contact {
+        /* Business CTA - Bold and Eye-catching */
+        .business-cta {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 80px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .business-cta::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent);
+            top: -250px;
+            right: -250px;
+        }
+
+        .business-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .business-info h2 {
+            font-size: 3rem;
             color: white;
-            padding: 100px 20px;
-        }
-
-        .business-contact h2 {
-            text-align: center;
-            font-size: 2.5rem;
             margin-bottom: 20px;
+            font-weight: 900;
         }
 
-        .business-contact .subtitle {
-            text-align: center;
+        .business-info p {
             font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .business-benefits {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .business-benefits li {
+            color: white;
+            padding: 12px 0;
+            padding-left: 36px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .business-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #f093fb;
+            font-weight: 800;
+            font-size: 1.3rem;
         }
 
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
             background: rgba(255,255,255,0.05);
-            padding: 50px;
+            padding: 40px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 16px;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            color: white;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 15px;
+            padding: 14px;
             border: 2px solid rgba(255,255,255,0.1);
             background: rgba(255,255,255,0.05);
             border-radius: 10px;
@@ -421,190 +549,36 @@
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 18px;
-            background: #667eea;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            border-radius: 50px;
+            border-radius: 10px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
         }
 
         .submit-btn:hover {
-            background: #764ba2;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
 
-        /* How It Works */
-        .how-it-works {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 20px;
-        }
-
-        .how-it-works h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-        }
-
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .step {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: white;
-            color: #667eea;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin: 0 auto 20px;
-        }
-
-        .step h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 20px;
-            background: #f8f9fa;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #1a1a1a;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-        }
-
-        .author-info h4 {
-            color: #1a1a1a;
-            font-size: 1rem;
-        }
-
-        .author-info p {
-            color: #999;
-            font-size: 0.9rem;
-        }
-
-        /* Final CTA */
-        .final-cta {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .final-cta p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        /* Success Message */
         .success-message {
             display: none;
             background: #4caf50;
             color: white;
-            padding: 15px;
+            padding: 14px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             text-align: center;
+            font-weight: 600;
         }
 
         .success-message.show {
@@ -623,90 +597,284 @@
             }
         }
 
+        /* Testimonials - Compact Carousel */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 80px 60px;
+        }
+
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #444;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .author-info h4 {
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .author-info p {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Final CTA - Urgent and Bold */
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 100px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent);
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .final-cta p {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 40px;
+        }
+
+        /* Footer - Minimal */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 40px 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 30px;
+                text-align: center;
+            }
+
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
-            .hero .subtitle {
-                font-size: 1.2rem;
+            .hero-stats {
+                justify-content: center;
             }
 
-            .cta-buttons {
+            .cta-group {
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+
+            .business-content {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+
+            .testimonial-slider {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .social-proof-banner {
+                padding: 20px 30px;
+            }
+
+            .features-section,
+            .business-cta,
+            .testimonials,
+            .final-cta {
+                padding: 60px 30px;
+            }
+
+            footer {
+                padding: 30px;
+            }
+
+            .footer-content {
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .steps {
-                flex-direction: column;
-            }
-
-            .contact-form {
-                padding: 30px 20px;
+                gap: 20px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <div class="hero-bg"></div>
+
+    <!-- Hero Section - Maximum Impact Above Fold -->
     <section class="hero">
-        <div class="hero-content container">
-            <h1>Connect Locally.<br>Shop Smarter.</h1>
-            <p class="subtitle">The social marketplace that brings your community together</p>
+        <div class="hero-content">
+            <h1>Your Neighborhood<br>in Your <span class="highlight">Pocket</span></h1>
+            <p class="hero-subtitle">Connect with locals. Discover hidden gems. Support your community.</p>
             
-            <div class="cta-buttons">
-                <a href="#download" class="btn btn-primary">Download Free App</a>
-                <a href="how-it-works.html" class="btn btn-secondary">See How It Works</a>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Active Users</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Businesses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Connections</span>
+                </div>
             </div>
 
-            <div class="app-preview">
+            <div class="cta-group">
+                <a href="#download" class="btn btn-primary">
+                    Download Free 📱
+                </a>
+                <a href="how-it-works.html" class="btn btn-secondary">
+                    See How It Works →
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="phone-stack">
                 <div class="phone-mockup">
                     <div class="phone-notch"></div>
                     <div class="phone-screen">
-                        <div class="mock-app">
-                            <div class="mock-header">
+                        <div class="app-ui">
+                            <div class="app-header">
                                 <h3>Discover</h3>
-                                <p>People & businesses near you</p>
+                                <p>Your neighborhood awaits</p>
                             </div>
-                            <div class="mock-content">
-                                <div class="mock-card">
-                                    <div class="mock-card-header">
-                                        <div class="mock-avatar">JD</div>
-                                        <div class="mock-card-info">
+                            <div class="app-cards">
+                                <div class="app-card">
+                                    <div class="card-header">
+                                        <div class="card-avatar">JD</div>
+                                        <div class="card-info">
                                             <h4>Java Dreams Café</h4>
-                                            <p>0.3 miles away • Coffee Shop</p>
+                                            <p>0.3 mi • Coffee Shop</p>
                                         </div>
                                     </div>
-                                    <div class="mock-card-body">
-                                        20% off all lattes this week! Come try our new seasonal menu.
+                                    <div class="card-body">
+                                        20% off all lattes this week!
                                     </div>
-                                    <span class="mock-badge">Special Offer</span>
+                                    <span class="card-badge">🔥 Hot Deal</span>
                                 </div>
-                                <div class="mock-card">
-                                    <div class="mock-card-header">
-                                        <div class="mock-avatar">SK</div>
-                                        <div class="mock-card-info">
+                                <div class="app-card">
+                                    <div class="card-header">
+                                        <div class="card-avatar">SK</div>
+                                        <div class="card-info">
                                             <h4>Sarah K.</h4>
-                                            <p>0.5 miles away • Book Club</p>
+                                            <p>0.5 mi • Book Club</p>
                                         </div>
                                     </div>
-                                    <div class="mock-card-body">
-                                        Looking for hiking buddies this weekend! Anyone interested?
+                                    <div class="card-body">
+                                        Hiking buddies wanted! 🥾
                                     </div>
-                                    <span class="mock-badge">New Match</span>
+                                    <span class="card-badge">✨ New Match</span>
                                 </div>
                             </div>
-                            <div class="mock-nav">
-                                <span class="mock-nav-item active">🏠</span>
-                                <span class="mock-nav-item">💬</span>
-                                <span class="mock-nav-item">❤️</span>
-                                <span class="mock-nav-item">👤</span>
+                            <div class="app-nav">
+                                <span class="nav-icon active">🏠</span>
+                                <span class="nav-icon">💬</span>
+                                <span class="nav-icon">❤️</span>
+                                <span class="nav-icon">👤</span>
                             </div>
                         </div>
                     </div>
@@ -715,164 +883,142 @@
         </div>
     </section>
 
-    <!-- Social Proof -->
-    <section class="social-proof">
-        <div class="container">
-            <h2>Trusted by Local Communities</h2>
-            <div class="stats">
-                <div class="stat">
-                    <span class="stat-number">10K+</span>
-                    <p class="stat-label">Active Users</p>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">500+</span>
-                    <p class="stat-label">Local Businesses</p>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">50K+</span>
-                    <p class="stat-label">Connections Made</p>
-                </div>
+    <div class="social-proof-banner">
+        <div class="proof-item">
+            <span class="proof-number">4.8★</span>
+            <span class="proof-label">App Store Rating</span>
+        </div>
+        <div class="proof-item">
+            <span class="proof-number">Featured</span>
+            <span class="proof-label">Product Hunt</span>
+        </div>
+        <div class="proof-item">
+            <span class="proof-number">#1</span>
+            <span class="proof-label">Local Social</span>
+        </div>
+    </div>
+
+    <!-- Features - Compact Grid -->
+    <section class="features-section">
+        <div class="section-header">
+            <h2>Why You'll Love SocialU</h2>
+            <p>Everything you need to connect locally, all in one app</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>Instant Matches</h3>
+                <p>Our smart algorithm connects you with people and businesses you'll actually vibe with</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💬</span>
+                <h3>Real-Time Chat</h3>
+                <p>No waiting around. Message instantly and make plans on the fly</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h3>Hyperlocal</h3>
+                <p>See what's happening within walking distance. Your neighborhood, amplified</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🏪</span>
+                <h3>Exclusive Deals</h3>
+                <p>Access members-only promotions from local businesses you love</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🔒</span>
+                <h3>Privacy First</h3>
+                <p>Your data stays yours. No creepy tracking or selling your info</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎉</span>
+                <h3>Events & Meetups</h3>
+                <p>Discover local events and activities happening right now</p>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features" id="features">
-        <div class="container">
-            <h2>Everything You Need in One App</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>Real-Time Messaging</h3>
-                    <p>Chat instantly with friends, neighbors, and local businesses. Stay connected with your community.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Smart Matching</h3>
-                    <p>Discover people with shared interests and businesses you'll love. Our algorithm connects you perfectly.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏪</div>
-                    <h3>Local Marketplace</h3>
-                    <p>Browse exclusive deals from neighborhood businesses. Support local, save money.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔔</div>
-                    <h3>Never Miss Out</h3>
-                    <p>Get instant notifications for messages, matches, and special offers from your favorite spots.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Safe & Secure</h3>
-                    <p>Your privacy matters. Bank-level security keeps your data protected at all times.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📍</div>
-                    <h3>Hyperlocal Focus</h3>
-                    <p>Connect with people and businesses within your actual neighborhood. Real community, real connections.</p>
-                </div>
+    <!-- Business CTA -->
+    <section class="business-cta">
+        <div class="business-content">
+            <div class="business-info">
+                <h2>Own a Local Business?</h2>
+                <p>Join 500+ businesses already reaching customers on SocialU</p>
+                <ul class="business-benefits">
+                    <li>Reach customers within 1 mile of your location</li>
+                    <li>Post promotions that actually get seen</li>
+                    <li>Build real relationships with your community</li>
+                    <li>Track engagement and customer insights</li>
+                    <li>Free basic listing • Premium features available</li>
+                </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- Business Contact Section -->
-    <section class="business-contact">
-        <div class="container">
-            <h2>Are You a Business Owner?</h2>
-            <p class="subtitle">Join hundreds of local businesses already connecting with customers on SocialU</p>
-            
             <form class="contact-form" id="businessForm">
                 <div class="success-message" id="successMessage">
-                    ✓ Thanks! We'll be in touch within 24 hours.
+                    ✓ Thanks! We'll contact you within 24 hours
                 </div>
-                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Business Name *</label>
+                        <input type="text" id="businessName" required placeholder="Your Business">
+                    </div>
+                    <div class="form-group">
+                        <label>Your Name *</label>
+                        <input type="text" id="contactName" required placeholder="John Smith">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="email" required placeholder="you@business.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" id="phone" placeholder="(555) 123-4567">
+                    </div>
+                </div>
                 <div class="form-group">
-                    <label for="businessName">Business Name *</label>
-                    <input type="text" id="businessName" name="businessName" required placeholder="Your Business Name">
+                    <label>Tell us about your business</label>
+                    <textarea id="message" placeholder="What do you do? What are your goals?"></textarea>
                 </div>
-                
-                <div class="form-group">
-                    <label for="contactName">Your Name *</label>
-                    <input type="text" id="contactName" name="contactName" required placeholder="John Smith">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required placeholder="you@yourbusiness.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Tell Us About Your Business</label>
-                    <textarea id="message" name="message" placeholder="What type of business do you run? How many locations? What are your goals?"></textarea>
-                </div>
-                
                 <button type="submit" class="submit-btn">Get Started with SocialU</button>
             </form>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2>Get Started in 3 Simple Steps</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Create Your Profile</h3>
-                    <p>Sign up in 60 seconds. Add your interests and what you're looking for.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Discover Matches</h3>
-                    <p>Browse local profiles and businesses. Like who you want to connect with.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Start Connecting</h3>
-                    <p>When someone likes you back, start chatting! Explore deals from local shops.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials -->
     <section class="testimonials">
-        <div class="container">
-            <h2>What Our Community Says</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">"I've met so many amazing people in my neighborhood I never knew existed. SocialU made my city feel like home again."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SM</div>
-                        <div class="author-info">
-                            <h4>Sarah M.</h4>
-                            <p>Community Member</p>
-                        </div>
+        <div class="section-header">
+            <h2>What People Are Saying</h2>
+            <p>Real stories from real community members</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p class="testimonial-text">I've discovered three coffee shops I never knew existed, all within a 10-minute walk. This app is magic!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah M.</h4>
+                        <p>Community Member</p>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"As a small business owner, SocialU has been a game-changer. I can reach local customers directly and build real relationships."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JR</div>
-                        <div class="author-info">
-                            <h4>James R.</h4>
-                            <p>Local Coffee Shop Owner</p>
-                        </div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">As a small business owner, SocialU has been incredible. I can actually reach my neighbors directly!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JR</div>
+                    <div class="author-info">
+                        <h4>James R.</h4>
+                        <p>Coffee Shop Owner</p>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"The deals section alone has saved me hundreds! Plus I discovered my new favorite taco place two blocks away."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MK</div>
-                        <div class="author-info">
-                            <h4>Maria K.</h4>
-                            <p>Regular User</p>
-                        </div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">Finally found my hiking crew! The matching is spot-on. Highly recommend.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MK</div>
+                    <div class="author-info">
+                        <h4>Maria K.</h4>
+                        <p>Regular User</p>
                     </div>
                 </div>
             </div>
@@ -880,36 +1026,35 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Ready to Join Your Community?</h2>
-            <p>Download SocialU today and start making real connections</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">Get Started Free</a>
+    <section id="download" class="final-cta">
+        <div class="final-cta-content">
+            <h2>Ready to Connect?</h2>
+            <p>Download SocialU and discover your neighborhood like never before</p>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Download Free App</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="footer-content">
             <div class="footer-links">
-                <a href="#">About</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact</a>
-                <a href="#">Support</a>
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="#about">About</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+                <a href="#contact">Contact</a>
             </div>
             <p>&copy; 2025 SocialU. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Business Form Handler
         document.getElementById('businessForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const formData = {
                 businessName: document.getElementById('businessName').value,
                 contactName: document.getElementById('contactName').value,
@@ -919,19 +1064,14 @@
                 timestamp: new Date().toISOString()
             };
             
-            // Show success message
             const successMessage = document.getElementById('successMessage');
             successMessage.classList.add('show');
-            
-            // Reset form
             this.reset();
             
-            // Hide success message after 5 seconds
             setTimeout(() => {
                 successMessage.classList.remove('show');
             }, 5000);
             
-            // In production, you'd send this to your backend
             console.log('Business inquiry submitted:', formData);
         });
     </script>
