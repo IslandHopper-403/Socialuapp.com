@@ -25,4 +25,23 @@
     <priority>0.7</priority>
   </url>
   <!-- Add more blog posts as you create them -->
+<url>
+    <loc>https://socialuapp.com/blog/hoi-an-lantern-festival-guide.html</loc>
+    <lastmod>2025-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+</url>
+<url>
+    <loc>https://socialuapp.com/blog/getting-around-hoi-an-transport-guide.html</loc>
+    <lastmod>2025-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+</url>
+<url>
+    <loc>https://socialuapp.com/blog/hoi-an-on-20-dollars-day.html</loc>
+    <lastmod>2025-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+</url>
+  
 </urlset>
