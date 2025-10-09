@@ -1,28 +1,29 @@
 /* ========================================
    BLOG POST PAGE STYLES
+   Scoped to .article-page to avoid conflicts
    ======================================== */
 
 /* Related Articles Section */
-.related-articles {
+.article-page .related-articles {
     margin: 80px 0 60px;
     padding: 50px 0;
     border-top: 2px solid #f0f0f0;
 }
 
-.related-articles h3 {
+.article-page .related-articles h3 {
     font-size: 2rem;
     margin-bottom: 40px;
     text-align: center;
     font-weight: 800;
 }
 
-.related-grid {
+.article-page .related-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-.related-card {
+.article-page .related-card {
     background: white;
     border-radius: 15px;
     overflow: hidden;
@@ -33,32 +34,32 @@
     display: block;
 }
 
-.related-card:hover {
+.article-page .related-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-.related-image {
+.article-page .related-image {
     height: 200px;
     overflow: hidden;
 }
 
-.related-image img {
+.article-page .related-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.related-card:hover .related-image img {
+.article-page .related-card:hover .related-image img {
     transform: scale(1.1);
 }
 
-.related-content {
+.article-page .related-content {
     padding: 20px;
 }
 
-.related-category {
+.article-page .related-category {
     display: inline-block;
     font-size: 0.75rem;
     font-weight: 600;
@@ -69,47 +70,47 @@
     margin-bottom: 12px;
 }
 
-.related-content h4 {
+.article-page .related-content h4 {
     font-size: 1.1rem;
     margin-bottom: 10px;
     line-height: 1.4;
     color: #1a1a1a;
 }
 
-.related-content p {
+.article-page .related-content p {
     font-size: 0.9rem;
     color: #666;
     line-height: 1.5;
 }
 
 /* Breadcrumb Navigation */
-.breadcrumb {
+.article-page .breadcrumb {
     background: #f8f9fa;
     padding: 15px 0;
     font-size: 0.9rem;
 }
 
-.breadcrumb a {
+.article-page .breadcrumb a {
     color: #667eea;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.breadcrumb a:hover {
+.article-page .breadcrumb a:hover {
     color: #764ba2;
 }
 
-.breadcrumb span {
+.article-page .breadcrumb span {
     color: #666;
 }
 
 /* Article Header */
-.post-header {
+.article-page .post-header {
     padding: 60px 0 40px;
     text-align: center;
 }
 
-.post-meta-top {
+.article-page .post-meta-top {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -118,14 +119,14 @@
     flex-wrap: wrap;
 }
 
-.post-header h1 {
+.article-page .post-header h1 {
     font-size: 2.8rem;
     line-height: 1.3;
     margin-bottom: 20px;
     font-weight: 800;
 }
 
-.post-subtitle {
+.article-page .post-subtitle {
     font-size: 1.3rem;
     color: #666;
     line-height: 1.6;
@@ -133,7 +134,7 @@
     margin: 0 auto 30px;
 }
 
-.author-info {
+.article-page .author-info {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,29 +142,29 @@
     margin-top: 30px;
 }
 
-.author-info img {
+.article-page .author-info img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.author-info strong {
+.article-page .author-info strong {
     display: block;
     margin-bottom: 5px;
 }
 
-.author-info span {
+.article-page .author-info span {
     color: #999;
     font-size: 0.9rem;
 }
 
 /* Featured Image */
-.featured-post-image {
+.article-page .featured-post-image {
     margin-bottom: 60px;
 }
 
-.featured-post-image img {
+.article-page .featured-post-image img {
     width: 100%;
     max-height: 600px;
     object-fit: cover;
@@ -171,7 +172,7 @@
 }
 
 /* Article Content */
-.post-content {
+.article-page .post-content {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.1rem;
@@ -179,37 +180,37 @@
     color: #333;
 }
 
-.post-content h2 {
+.article-page .post-content h2 {
     font-size: 2rem;
     margin: 50px 0 20px;
     font-weight: 700;
 }
 
-.post-content h3 {
+.article-page .post-content h3 {
     font-size: 1.5rem;
     margin: 40px 0 15px;
     font-weight: 600;
 }
 
-.post-content p {
+.article-page .post-content p {
     margin-bottom: 20px;
 }
 
-.post-content ul,
-.post-content ol {
+.article-page .post-content ul,
+.article-page .post-content ol {
     margin: 20px 0 20px 30px;
 }
 
-.post-content li {
+.article-page .post-content li {
     margin-bottom: 10px;
 }
 
-.post-content strong {
+.article-page .post-content strong {
     font-weight: 600;
     color: #1a1a1a;
 }
 
-.intro-text {
+.article-page .intro-text {
     font-size: 1.2rem;
     color: #555;
     line-height: 1.9;
@@ -220,42 +221,12 @@
     border-radius: 8px;
 }
 
-/* Table of Contents */
-.table-of-contents {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 15px;
-    margin: 40px 0;
-}
-
-.table-of-contents h3 {
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-}
-
-.table-of-contents ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.table-of-contents li {
-    margin-bottom: 12px;
-}
-
-.table-of-contents a {
-    color: #667eea;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.table-of-contents a:hover {
-    color: #764ba2;
-}
+/* Table of Contents - This overlaps with blog.css */
+/* Using the same styles from blog.css scoped update */
+/* You can remove this section if it duplicates blog.css */
 
 /* Social Share Buttons */
-.social-share {
+.article-page .social-share {
     margin: 60px 0;
     padding: 40px;
     background: #f8f9fa;
@@ -263,19 +234,19 @@
     text-align: center;
 }
 
-.social-share h4 {
+.article-page .social-share h4 {
     margin-bottom: 20px;
     font-size: 1.2rem;
 }
 
-.share-buttons {
+.article-page .share-buttons {
     display: flex;
     gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.share-buttons button {
+.article-page .share-buttons button {
     padding: 12px 25px;
     border: none;
     border-radius: 25px;
@@ -285,33 +256,33 @@
     font-size: 0.95rem;
 }
 
-.share-buttons button:nth-child(1) {
+.article-page .share-buttons button:nth-child(1) {
     background: #1877f2;
     color: white;
 }
 
-.share-buttons button:nth-child(2) {
+.article-page .share-buttons button:nth-child(2) {
     background: #1da1f2;
     color: white;
 }
 
-.share-buttons button:nth-child(3) {
+.article-page .share-buttons button:nth-child(3) {
     background: #e60023;
     color: white;
 }
 
-.share-buttons button:nth-child(4) {
+.article-page .share-buttons button:nth-child(4) {
     background: #667eea;
     color: white;
 }
 
-.share-buttons button:hover {
+.article-page .share-buttons button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* Article CTA */
-.article-cta {
+.article-page .article-cta {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 50px;
@@ -320,40 +291,119 @@
     margin: 60px 0;
 }
 
-.article-cta h3 {
+.article-page .article-cta h3 {
     font-size: 2rem;
     margin-bottom: 15px;
 }
 
-.article-cta p {
+.article-page .article-cta p {
     font-size: 1.1rem;
     margin-bottom: 30px;
     opacity: 0.95;
 }
 
-/* Responsive Blog Post */
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+/* Dark Mode - Related Articles */
+body.article-page.dark-mode .related-articles {
+    border-top-color: #2a2a2a;
+}
+
+body.article-page.dark-mode .related-articles h3 {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .related-card {
+    background: #1f1f1f;
+    border: 1px solid #2a2a2a;
+}
+
+body.article-page.dark-mode .related-content h4 {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .related-content p {
+    color: #b0b0b0;
+}
+
+/* Dark Mode - Breadcrumb */
+body.article-page.dark-mode .breadcrumb {
+    background: #1a1a1a;
+}
+
+body.article-page.dark-mode .breadcrumb span {
+    color: #909090;
+}
+
+/* Dark Mode - Post Header */
+body.article-page.dark-mode .post-header h1 {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .post-subtitle {
+    color: #b0b0b0;
+}
+
+body.article-page.dark-mode .author-info span {
+    color: #707070;
+}
+
+/* Dark Mode - Post Content */
+body.article-page.dark-mode .post-content {
+    color: #d1d1d1;
+}
+
+body.article-page.dark-mode .post-content h2,
+body.article-page.dark-mode .post-content h3 {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .post-content strong {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .intro-text {
+    background: #1a1f2e;
+    color: #c7d2fe;
+    border-left-color: #818CF8;
+}
+
+/* Dark Mode - Social Share */
+body.article-page.dark-mode .social-share {
+    background: #1f1f1f;
+}
+
+body.article-page.dark-mode .social-share h4 {
+    color: #ffffff;
+}
+
+/* ========================================
+   RESPONSIVE BLOG POST
+   ======================================== */
 @media (max-width: 768px) {
-    .post-header h1 {
+    .article-page .post-header h1 {
         font-size: 2rem;
     }
 
-    .post-subtitle {
+    .article-page .post-subtitle {
         font-size: 1.1rem;
     }
 
-    .post-content {
+    .article-page .post-content {
         font-size: 1rem;
     }
 
-    .related-grid {
+    .article-page .related-grid {
         grid-template-columns: 1fr;
     }
 
-    .share-buttons {
+    .article-page .share-buttons {
         flex-direction: column;
     }
 
-    .share-buttons button {
+    .article-page .share-buttons button {
         width: 100%;
     }
 }
