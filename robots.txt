@@ -7,5 +7,5 @@ Disallow: /api/
 Disallow: /javascript/
 Disallow: /css/
 
-# Sitemap location
-Sitemap: https://socialuapp.com/sitemap.xml
+
+Sitemap: https://hoi-an-social-app.web.app/sitemap.xml
