@@ -1,8 +1,74 @@
-// javascript/blog.js
+// javascript/blog.js - COMPLETE FILE REPLACEMENT
 
 /**
- * Blog functionality - search, filter, and load more
+ * Blog functionality - search, filter, and pagination
  */
+
+// Pagination settings
+let articlesPerPage = 6; // Show 6 articles initially
+let currentlyShowing = articlesPerPage;
+
+// Initialize pagination on page load
+function initPagination() {
+    const allArticles = document.querySelectorAll('.blog-card');
+    const loadMoreBtn = document.querySelector('.load-more-section');
+    
+    // Hide articles beyond initial count
+    allArticles.forEach((article, index) => {
+        if (index >= articlesPerPage) {
+            article.style.display = 'none';
+            article.classList.add('hidden-article');
+        }
+    });
+    
+    // Hide button if all articles already showing
+    if (allArticles.length <= articlesPerPage) {
+        if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+    }
+    
+    console.log(`📦 Showing ${Math.min(articlesPerPage, allArticles.length)} of ${allArticles.length} articles`);
+}
+
+// Load more articles (pagination)
+function loadMoreArticles() {
+    console.log('📦 Loading more articles...');
+    
+    const allArticles = document.querySelectorAll('.blog-card');
+    const hiddenArticles = document.querySelectorAll('.blog-card.hidden-article');
+    const loadMoreBtn = document.querySelector('.load-more-section');
+    
+    // Show next batch of articles
+    let articlesToShow = Math.min(3, hiddenArticles.length); // Show 3 more at a time
+    
+    for (let i = 0; i < articlesToShow; i++) {
+        if (hiddenArticles[i]) {
+            hiddenArticles[i].style.display = 'block';
+            hiddenArticles[i].classList.remove('hidden-article');
+            
+            // Fade in animation
+            setTimeout(() => {
+                hiddenArticles[i].style.opacity = '1';
+                hiddenArticles[i].style.transform = 'translateY(0)';
+            }, i * 100); // Stagger the animation
+        }
+    }
+    
+    currentlyShowing += articlesToShow;
+    
+    // Hide button if all articles now showing
+    const remainingHidden = document.querySelectorAll('.blog-card.hidden-article').length;
+    if (remainingHidden === 0) {
+        if (loadMoreBtn) {
+            loadMoreBtn.style.opacity = '0';
+            setTimeout(() => {
+                loadMoreBtn.style.display = 'none';
+            }, 300);
+        }
+        console.log('✅ All articles loaded!');
+    } else {
+        console.log(`📦 Now showing ${currentlyShowing} of ${allArticles.length} articles`);
+    }
+}
 
 // Filter articles by category
 function filterCategory(category) {
@@ -16,15 +82,19 @@ function filterCategory(category) {
     
     // Filter articles
     const articles = document.querySelectorAll('.blog-card');
+    let visibleCount = 0;
+    
     articles.forEach(article => {
         const articleCategory = article.getAttribute('data-category');
         
         if (category === 'all' || articleCategory === category) {
             article.style.display = 'block';
+            article.classList.remove('hidden-article');
             setTimeout(() => {
                 article.style.opacity = '1';
                 article.style.transform = 'translateY(0)';
             }, 10);
+            visibleCount++;
         } else {
             article.style.opacity = '0';
             article.style.transform = 'translateY(20px)';
@@ -33,6 +103,14 @@ function filterCategory(category) {
             }, 300);
         }
     });
+    
+    // Hide "Load More" button when filtering (show all matches)
+    const loadMoreBtn = document.querySelector('.load-more-section');
+    if (loadMoreBtn) {
+        loadMoreBtn.style.display = 'none';
+    }
+    
+    console.log(`✅ Showing ${visibleCount} articles in category: ${category}`);
 }
 
 // Search blog posts
@@ -54,6 +132,7 @@ function searchBlog() {
         
         if (title.includes(searchTerm) || description.includes(searchTerm)) {
             article.style.display = 'block';
+            article.classList.remove('hidden-article');
             article.style.opacity = '1';
             foundCount++;
         } else {
@@ -61,6 +140,12 @@ function searchBlog() {
             article.style.opacity = '0';
         }
     });
+    
+    // Hide "Load More" button when searching
+    const loadMoreBtn = document.querySelector('.load-more-section');
+    if (loadMoreBtn) {
+        loadMoreBtn.style.display = 'none';
+    }
     
     // Show results message
     if (foundCount === 0) {
@@ -80,25 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // Initialize pagination
+    initPagination();
 });
-
-// Load more articles (pagination simulation)
-let articlesLoaded = 6; // Initial articles shown
-function loadMoreArticles() {
-    console.log('📦 Loading more articles...');
-    
-    // In a real implementation, this would fetch from a database or API
-    // For now, we'll just show a message
-    alert('More articles coming soon! We\'re constantly adding new Hoi An travel guides and tips.');
-    
-    // You can implement actual loading logic here when you have more articles
-    // Example:
-    // fetchMoreArticles(articlesLoaded, articlesLoaded + 6)
-    //     .then(newArticles => {
-    //         appendArticlesToGrid(newArticles);
-    //         articlesLoaded += 6;
-    //     });
-}
 
 // Newsletter subscription
 function subscribeNewsletter(event) {
@@ -110,7 +180,6 @@ function subscribeNewsletter(event) {
     console.log('📧 Newsletter subscription:', email);
     
     // In production, send to your email service (Mailchimp, ConvertKit, etc.)
-    // For now, show success message
     alert(`🎉 Thanks for subscribing! You'll receive our weekly Hoi An travel tips at ${email}`);
     emailInput.value = '';
     
