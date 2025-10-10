@@ -1,11 +1,7 @@
-# robots.txt for socialuapp.com
-
+# robots.txt for hoi-an-social-app.web.app
 User-agent: *
-Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /javascript/
-Disallow: /css/
 
-
+# Point search engines to the XML sitemap
 Sitemap: https://hoi-an-social-app.web.app/sitemap.xml
