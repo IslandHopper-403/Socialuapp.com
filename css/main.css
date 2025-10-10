@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -24,6 +28,18 @@ body {
     line-height: 1.5;
     color: #1a1a1a;
     background: #0a0a0a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CSS-only sticky footer fix */
+body > *:not(footer) {
+    flex-shrink: 0;
+}
+
+body > footer {
+    margin-top: auto;
 }
 
 .container {
@@ -808,7 +824,7 @@ body {
 
 .business-info p {
     font-size: 1.2rem;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.95); /* Changed from 0.8 to 0.95 for better readability */
     margin-bottom: 16px;
     line-height: 1.6;
 }
