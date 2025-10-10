@@ -772,7 +772,7 @@ body {
 /* Business CTA Section */
 .business-cta {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    padding: 80px 60px;
+    padding: 80px 0; /* Changed from 80px 60px to 80px 0 */
     position: relative;
     overflow: hidden;
 }
@@ -796,6 +796,7 @@ body {
     align-items: center;
     position: relative;
     z-index: 1;
+    padding: 0 60px; /* Added padding here instead */
 }
 
 .business-info h2 {
@@ -898,15 +899,16 @@ body {
 /* Testimonials */
 .testimonials {
     background: #f8f9fa;
-    padding: 80px 60px;
+    padding: 80px 0; /* Changed from 80px 60px */
 }
 
 .testimonial-slider {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    padding: 0 60px; /* Added padding here */
 }
 
 .testimonial {
@@ -970,7 +972,7 @@ body {
 /* Final CTA */
 .final-cta {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    padding: 100px 60px;
+    padding: 100px 0; /* Changed from 100px 60px */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -989,6 +991,7 @@ body {
     z-index: 1;
     max-width: 700px;
     margin: 0 auto;
+    padding: 0 60px; /* Added padding here */
 }
 
 .final-cta h2 {
@@ -1053,8 +1056,10 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
     color: rgba(255,255,255,0.5);
     font-size: 0.9rem;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding-left: 60px; /* Added */
+    padding-right: 60px; /* Added */
 }
 
 .footer-bottom a {
@@ -1200,13 +1205,31 @@ footer {
         gap: 25px;
     }
 
+    .business-content {
+        padding: 0 30px; /* Tablet padding */
+    }
+
+    .testimonial-slider {
+        padding: 0 30px; /* Tablet padding */
+    }
+
+    .final-cta-content {
+        padding: 0 30px; /* Tablet padding */
+    }
+
     footer {
-        padding: 40px 30px 20px;
+        padding: 40px 0 20px; /* Changed */
     }
 
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
+        padding: 0 30px; /* Tablet padding */
+    }
+
+    .footer-bottom {
+        padding-left: 30px; /* Tablet padding */
+        padding-right: 30px; /* Tablet padding */
     }
 }
 
@@ -1350,12 +1373,13 @@ footer {
 
     /* Business CTA Mobile */
     .business-cta {
-        padding: 60px 20px;
+        padding: 60px 0; /* Changed from 60px 20px */
     }
 
     .business-content {
         grid-template-columns: 1fr;
         gap: 40px;
+        padding: 0 20px; /* Mobile padding */
     }
 
     .business-info h2 {
@@ -1376,17 +1400,22 @@ footer {
 
     /* Testimonials Mobile */
     .testimonials {
-        padding: 60px 20px;
+        padding: 60px 0; /* Changed from 60px 20px */
     }
 
     .testimonial-slider {
         grid-template-columns: 1fr;
         gap: 25px;
+        padding: 0 20px; /* Mobile padding */
     }
 
     /* Final CTA Mobile */
     .final-cta {
-        padding: 60px 20px;
+        padding: 60px 0; /* Changed from 60px 20px */
+    }
+
+    .final-cta-content {
+        padding: 0 20px; /* Mobile padding */
     }
 
     .final-cta h2 {
@@ -1417,13 +1446,19 @@ footer {
 
     /* Footer Mobile */
     footer {
-        padding: 40px 20px 20px;
+        padding: 40px 0 20px; /* Changed from 40px 20px 20px */
     }
 
     .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
         text-align: center;
+        padding: 0 20px; /* Mobile padding */
+    }
+
+    .footer-bottom {
+        padding-left: 20px; /* Mobile padding */
+        padding-right: 20px; /* Mobile padding */
     }
 
     .footer-section a {
