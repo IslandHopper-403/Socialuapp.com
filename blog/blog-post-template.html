@@ -345,9 +345,8 @@
         </div>
     </footer>
 
-    <script src="../javascript/blog.js"></script>
-
-<!-- Mobile Menu Toggle Script -->
+<!-- Scripts -->
+  <script src="../javascript/blog.js"></script>
     <script>
         // Mobile menu toggle
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -360,22 +359,22 @@
             });
         }
         
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.main-header') && headerNav && headerNav.classList.contains('active')) {
-                mobileMenuToggle.classList.remove('active');
-                headerNav.classList.remove('active');
-            }
-        });
+        // Social sharing functions
+        function shareOnFacebook() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
+        }
         
-        // Close mobile menu when clicking a link
-        if (headerNav) {
-            headerNav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenuToggle.classList.remove('active');
-                    headerNav.classList.remove('active');
-                });
-            });
+        function shareOnTwitter() {
+            window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=Getting Around Hoi An - Complete Transport Guide', '_blank');
+        }
+        
+        function shareOnPinterest() {
+            window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href), '_blank');
+        }
+        
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert('Link copied to clipboard!');
         }
     </script>
 </body>
