@@ -1,0 +1,409 @@
+/* ========================================
+   BLOG POST PAGE STYLES
+   Scoped to .article-page to avoid conflicts
+   ======================================== */
+
+/* Related Articles Section */
+.article-page .related-articles {
+    margin: 80px 0 60px;
+    padding: 50px 0;
+    border-top: 2px solid #f0f0f0;
+}
+
+.article-page .related-articles h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.article-page .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.article-page .related-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.article-page .related-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.article-page .related-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.article-page .related-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.article-page .related-card:hover .related-image img {
+    transform: scale(1.1);
+}
+
+.article-page .related-content {
+    padding: 20px;
+}
+
+.article-page .related-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 5px 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.article-page .related-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #1a1a1a;
+}
+
+.article-page .related-content p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Breadcrumb Navigation */
+.article-page .breadcrumb {
+    background: #f8f9fa;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+
+.article-page .breadcrumb a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.article-page .breadcrumb a:hover {
+    color: #764ba2;
+}
+
+.article-page .breadcrumb span {
+    color: #666;
+}
+
+/* Article Header */
+.article-page .post-header {
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.article-page .post-meta-top {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.article-page .post-header h1 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.article-page .post-subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.article-page .author-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.article-page .author-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.article-page .author-info strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.article-page .author-info span {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Featured Image */
+.article-page .featured-post-image {
+    margin-bottom: 60px;
+}
+
+.article-page .featured-post-image img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Article Content */
+.article-page .post-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.article-page .post-content h2 {
+    font-size: 2rem;
+    margin: 50px 0 20px;
+    font-weight: 700;
+}
+
+.article-page .post-content h3 {
+    font-size: 1.5rem;
+    margin: 40px 0 15px;
+    font-weight: 600;
+}
+
+.article-page .post-content p {
+    margin-bottom: 20px;
+}
+
+.article-page .post-content ul,
+.article-page .post-content ol {
+    margin: 20px 0 20px 30px;
+}
+
+.article-page .post-content li {
+    margin-bottom: 10px;
+}
+
+.article-page .post-content strong {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.article-page .intro-text {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 40px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-left: 4px solid #667eea;
+    border-radius: 8px;
+}
+
+/* Table of Contents - This overlaps with blog.css */
+/* Using the same styles from blog.css scoped update */
+/* You can remove this section if it duplicates blog.css */
+
+/* Social Share Buttons */
+.article-page .social-share {
+    margin: 60px 0;
+    padding: 40px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.article-page .social-share h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.article-page .share-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.article-page .share-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.article-page .share-buttons button:nth-child(1) {
+    background: #1877f2;
+    color: white;
+}
+
+.article-page .share-buttons button:nth-child(2) {
+    background: #1da1f2;
+    color: white;
+}
+
+.article-page .share-buttons button:nth-child(3) {
+    background: #e60023;
+    color: white;
+}
+
+.article-page .share-buttons button:nth-child(4) {
+    background: #667eea;
+    color: white;
+}
+
+.article-page .share-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Article CTA */
+.article-page .article-cta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.article-page .article-cta h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.article-page .article-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+/* Dark Mode - Related Articles */
+body.article-page.dark-mode .related-articles {
+    border-top-color: #2a2a2a;
+}
+
+body.article-page.dark-mode .related-articles h3 {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .related-card {
+    background: #1f1f1f;
+    border: 1px solid #2a2a2a;
+}
+
+body.article-page.dark-mode .related-content h4 {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .related-content p {
+    color: #b0b0b0;
+}
+
+/* Dark Mode - Breadcrumb */
+body.article-page.dark-mode .breadcrumb {
+    background: #1a1a1a;
+}
+
+body.article-page.dark-mode .breadcrumb span {
+    color: #909090;
+}
+
+/* Dark Mode - Post Header */
+body.article-page.dark-mode .post-header h1 {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .post-subtitle {
+    color: #b0b0b0;
+}
+
+body.article-page.dark-mode .author-info span {
+    color: #707070;
+}
+
+/* Dark Mode - Post Content */
+body.article-page.dark-mode .post-content {
+    color: #d1d1d1;
+}
+
+body.article-page.dark-mode .post-content h2,
+body.article-page.dark-mode .post-content h3 {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .post-content strong {
+    color: #ffffff;
+}
+
+body.article-page.dark-mode .intro-text {
+    background: #1a1f2e;
+    color: #c7d2fe;
+    border-left-color: #818CF8;
+}
+
+/* Dark Mode - Social Share */
+body.article-page.dark-mode .social-share {
+    background: #1f1f1f;
+}
+
+body.article-page.dark-mode .social-share h4 {
+    color: #ffffff;
+}
+
+/* ========================================
+   RESPONSIVE BLOG POST
+   ======================================== */
+@media (max-width: 768px) {
+    .article-page .post-header h1 {
+        font-size: 2rem;
+    }
+
+    .article-page .post-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .article-page .post-content {
+        font-size: 1rem;
+    }
+
+    .article-page .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-page .share-buttons {
+        flex-direction: column;
+    }
+
+    .article-page .share-buttons button {
+        width: 100%;
+    }
+}

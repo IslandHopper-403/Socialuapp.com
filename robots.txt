@@ -1,0 +1,11 @@
+# robots.txt for socialuapp.com
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /javascript/
+Disallow: /css/
+
+
+Sitemap: https://hoi-an-social-app.web.app/sitemap.xml

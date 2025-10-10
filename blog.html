@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX23VDV53B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WX23VDV53B');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog - Hoi An Guides, Tips & Hidden Gems | SocialU</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Expert travel guides, insider tips, and hidden gems in Hoi An. From the best pho spots to secret beaches, discover everything you need for an unforgettable Hoi An adventure.">
+    <meta name="keywords" content="Hoi An blog, Vietnam travel blog, Hoi An travel tips, Hoi An hidden gems, best restaurants Hoi An, Hoi An activities, Vietnam travel guide">
+    <link rel="canonical" href="https://socialuapp.com/blog">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hoi An Travel Blog - Local Guides & Hidden Gems">
+    <meta property="og:description" content="Insider guides and travel tips for exploring Hoi An like a local">
+    <meta property="og:url" content="https://socialuapp.com/blog">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/blog.css">
+    
+    <!-- Structured Data - Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "SocialU Hoi An Travel Blog",
+      "description": "Travel guides, tips, and hidden gems for exploring Hoi An, Vietnam",
+      "url": "https://socialuapp.com/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SocialU",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://socialuapp.com/images/logo.png"
+        }
+      }
+    }
+    </script>
+  
+</head>
+<body class="article-page">
+<header class="main-header" id="mainHeader">
+    <div class="header-container">
+        <a href="index.html" class="header-logo">SocialU</a>
+        
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="header-nav" id="headerNav">
+            <a href="index.html">Home</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="index.html#download" class="btn-nav">Download App</a>
+        </nav>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Your Ultimate Hoi An Travel Guide</h1>
+            <p>Insider tips, hidden gems, and authentic experiences from locals and travelers who know Hoi An best</p>
+            
+            <!-- Search Bar -->
+            <div class="blog-search">
+                <input type="text" id="blogSearch" placeholder="Search articles... (e.g., 'best coffee', 'beach', 'night market')">
+                <button onclick="searchBlog()">🔍 Search</button>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="blog-categories">
+                <button class="category-btn active" onclick="filterCategory('all')">All Posts</button>
+                <button class="category-btn" onclick="filterCategory('food')">🍜 Food & Drinks</button>
+                <button class="category-btn" onclick="filterCategory('activities')">🎯 Activities</button>
+                <button class="category-btn" onclick="filterCategory('culture')">🏮 Culture</button>
+                <button class="category-btn" onclick="filterCategory('tips')">💡 Travel Tips</button>
+                <button class="category-btn" onclick="filterCategory('nightlife')">🌙 Nightlife</button>
+                <button class="category-btn" onclick="filterCategory('budget')">💰 Budget Travel</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post">
+        <div class="container">
+            <article class="featured-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <div class="featured-image">
+                    <img src="images/blog/featured-hoi-an-lanterns.jpg" alt="Hoi An Ancient Town lanterns at night" itemprop="image">
+                    <span class="featured-badge">Featured</span>
+                </div>
+                <div class="featured-content">
+                    <div class="post-meta">
+                        <span class="category-badge food">Ultimate Guide</span>
+                        <time datetime="2025-10-05" itemprop="datePublished">October 5, 2025</time>
+                    </div>
+                    <h2 itemprop="headline">
+                        <a href="blog/ultimate-hoi-an-guide-2025.html">The Complete Hoi An Travel Guide 2025: Everything You Need to Know</a>
+                    </h2>
+                    <p itemprop="description">From hidden beaches to the best banh mi stands, discover everything Hoi An has to offer. This comprehensive guide covers transportation, must-visit spots, cultural experiences, and insider tips from locals and long-term travelers.</p>
+                    <a href="blog/ultimate-hoi-an-guide-2025.html" class="read-more">Read Full Guide →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            
+            <div class="articles-grid" id="articlesGrid">
+                
+                <!-- Article 1: Food -->
+                <article class="blog-card" data-category="food" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="card-image">
+                        <img src="images/blog/cao-lau-dish.jpg" alt="Traditional Cao Lau noodles" itemprop="image">
+                    </div>
+                    <div class="card-content">
+                        <div class="post-meta">
+                            <span class="category-badge food">Food & Drinks</span>
+                            <time datetime="2025-10-01" itemprop="datePublished">Oct 1, 2025</time>
+                        </div>
+                        <h3 itemprop="headline">
+                            <a href="blog/10-best-local-foods-hoi-an.html">10 Must-Try Local Foods in Hoi An (And Where to Find Them)</a>
+                        </h3>
+                        <p itemprop="description">From Cao Lau to White Rose dumplings, discover the authentic flavors that make Hoi An a foodie paradise. Includes exact locations and prices.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 6 min read</span>
+                            <a href="blog/10-best-local-foods-hoi-an.html" class="read-link">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2: Activities -->
+                <article class="blog-card" data-category="activities" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="card-image">
+                        <img src="images/blog/basket-boat.jpg" alt="Basket boat tour in coconut forest" itemprop="image">
+                    </div>
+                    <div class="card-content">
+                        <div class="post-meta">
+                            <span class="category-badge activities">Activities</span>
+                            <time datetime="2025-09-28" itemprop="datePublished">Sep 28, 2025</time>
+                        </div>
+                        <h3 itemprop="headline">
+                            <a href="blog/best-free-cheap-activities-hoi-an.html">15 Free & Cheap Things to Do in Hoi An (Budget Traveler's Guide)</a>
+                        </h3>
+                        <p itemprop="description">Explore Hoi An without breaking the bank. From sunrise bike rides to free walking tours and hidden beaches.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 8 min read</span>
+                            <a href="blog/best-free-cheap-activities-hoi-an.html" class="read-link">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3: Culture -->
+                <article class="blog-card" data-category="culture" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="card-image">
+                        <img src="images/blog/lantern-making.jpg" alt="Traditional lantern making workshop" itemprop="image">
+                    </div>
+                    <div class="card-content">
+                        <div class="post-meta">
+                            <span class="category-badge culture">Culture</span>
+                            <time datetime="2025-09-25" itemprop="datePublished">Sep 25, 2025</time>
+                        </div>
+                        <h3 itemprop="headline">
+                            <a href="blog/hoi-an-lantern-festival-guide.html">Hoi An Lantern Festival: Complete Guide for First-Timers</a>
+                        </h3>
+                        <p itemprop="description">Experience the magic of Hoi An's monthly Full Moon Lantern Festival. When to go, what to expect, and how to make the most of this enchanting tradition.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 5 min read</span>
+                            <a href="blog/hoi-an-lantern-festival-guide.html" class="read-link">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4: Tips -->
+                <article class="blog-card" data-category="tips" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="card-image">
+                        <img src="images/blog/scooter-rental.jpg" alt="Renting scooter in Hoi An" itemprop="image">
+                    </div>
+                    <div class="card-content">
+                        <div class="post-meta">
+                            <span class="category-badge tips">Travel Tips</span>
+                            <time datetime="2025-09-20" itemprop="datePublished">Sep 20, 2025</time>
+                        </div>
+                        <h3 itemprop="headline">
+                            <a href="blog/getting-around-hoi-an-transport-guide.html">Getting Around Hoi An: Complete Transport Guide (Bikes, Scooters & More)</a>
+                        </h3>
+                        <p itemprop="description">Everything you need to know about transportation in Hoi An - rental prices, safety tips, and the best routes to explore.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 7 min read</span>
+                            <a href="blog/getting-around-hoi-an-transport-guide.html" class="read-link">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5: Nightlife -->
+                <article class="blog-card" data-category="nightlife" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="card-image">
+                        <img src="images/blog/hoi-an-nightlife.jpg" alt="Hoi An bars and nightlife" itemprop="image">
+                    </div>
+                    <div class="card-content">
+                        <div class="post-meta">
+                            <span class="category-badge nightlife">Nightlife</span>
+                            <time datetime="2025-09-15" itemprop="datePublished">Sep 15, 2025</time>
+                        </div>
+                        <h3 itemprop="headline">
+                            <a href="blog/hoi-an-nightlife-guide.html">Hoi An After Dark: The Complete Nightlife Guide for Backpackers</a>
+                        </h3>
+                        <p itemprop="description">From rooftop bars to beach bonfires, discover where to party, socialize, and make friends in Hoi An's vibrant nightlife scene.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 6 min read</span>
+                            <a href="blog/hoi-an-nightlife-guide.html" class="read-link">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6: Budget -->
+                <article class="blog-card" data-category="budget" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="card-image">
+                        <img src="images/blog/budget-travel.jpg" alt="Budget travel in Hoi An" itemprop="image">
+                    </div>
+                    <div class="card-content">
+                        <div class="post-meta">
+                            <span class="category-badge budget">Budget Travel</span>
+                            <time datetime="2025-09-10" itemprop="datePublished">Sep 10, 2025</time>
+                        </div>
+                        <h3 itemprop="headline">
+                            <a href="blog/hoi-an-on-20-dollars-day.html">How to Experience Hoi An on $20 a Day (Complete Breakdown)</a>
+                        </h3>
+                        <p itemprop="description">A realistic daily budget guide for backpackers. Accommodation, food, activities, and transport - all broken down with actual prices.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 9 min read</span>
+                            <a href="blog/hoi-an-on-20-dollars-day.html" class="read-link">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+            
+            <!-- Article 7: Photography - NEW -->
+            <article class="blog-card" data-category="activities" itemscope itemtype="https://schema.org/BlogPosting">
+                <div class="card-image">
+                    <img src="images/blog/hoi-an-lanterns-hero.jpg" alt="Hoi An photography guide" itemprop="image">
+                </div>
+                <div class="card-content">
+                    <div class="post-meta">
+                        <span class="category-badge activities">Photography</span>
+                        <time datetime="2025-10-15" itemprop="datePublished">Oct 15, 2025</time>
+                    </div>
+                    <h3 itemprop="headline">
+                        <a href="blog/hoi-an-photography-guide.html">Hoi An Photography Guide: Best Instagram Spots & Camera Tips</a>
+                    </h3>
+                    <p itemprop="description">Complete photography guide to Hoi An's most photogenic locations with pro tips, exact GPS coordinates, and camera settings.</p>
+                    <div class="card-footer">
+                        <span class="read-time">⏱️ 14 min read</span>
+                        <a href="blog/hoi-an-photography-guide.html" class="read-link">Read More →</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Article 8: Hidden Gems - NEW -->
+            <article class="blog-card" data-category="tips" itemscope itemtype="https://schema.org/BlogPosting">
+                <div class="card-image">
+                    <img src="images/blog/hidden-beach-hero.jpg" alt="Hidden gems in Hoi An" itemprop="image">
+                </div>
+                <div class="card-content">
+                    <div class="post-meta">
+                        <span class="category-badge tips">Travel Tips</span>
+                        <time datetime="2025-10-18" itemprop="datePublished">Oct 18, 2025</time>
+                    </div>
+                    <h3 itemprop="headline">
+                        <a href="blog/hoi-an-hidden-gems.html">Hidden Gems in Hoi An: Off-the-Beaten-Path Experiences Locals Love</a>
+                    </h3>
+                    <p itemprop="description">Discover secret beaches, hidden cafes, local workshops, and authentic experiences in Hoi An that most tourists never see.</p>
+                    <div class="card-footer">
+                        <span class="read-time">⏱️ 15 min read</span>
+                        <a href="blog/hoi-an-hidden-gems.html" class="read-link">Read More →</a>
+                    </div>
+                </div>
+            </article>                    
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="btn-primary" onclick="loadMoreArticles()">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Get Weekly Hoi An Travel Tips</h2>
+                <p>Join 2,000+ travelers getting insider guides, hidden gems, and exclusive deals delivered to their inbox every week</p>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">Subscribe Free</button>
+                </form>
+                <p class="newsletter-privacy">No spam. Unsubscribe anytime. We respect your privacy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="blog-cta">
+        <div class="container">
+            <h2>Ready to Explore Hoi An?</h2>
+            <p>Download SocialU and connect with travelers, discover hidden gems, and make unforgettable memories</p>
+            <a href="index.html#download" class="btn-primary btn-large">Download SocialU Free</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>SocialU</h3>
+                <p>Connecting travelers and locals in Hoi An</p>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="blog.html">Travel Blog</a>
+                <a href="#download">Download App</a>
+            </div>
+            <div class="footer-section">
+                <h4>Popular Topics</h4>
+                <a href="blog.html?category=food">Food & Restaurants</a>
+                <a href="blog.html?category=activities">Activities</a>
+                <a href="blog.html?category=culture">Culture & Events</a>
+                <a href="blog.html?category=tips">Travel Tips</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="#facebook">Facebook</a>
+                <a href="#instagram">Instagram</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#support">Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SocialU. All rights reserved. | <a href="#privacy">Privacy</a> | <a href="#terms">Terms</a></p>
+        </div>
+    </footer>
+
+    <script src="javascript/blog.js"></script>
+
+    <!-- Scripts -->
+    <script src="../javascript/blog.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const headerNav = document.getElementById('headerNav');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                headerNav.classList.toggle('active');
+            });
+        }
+        
+        // Social sharing functions
+        function shareOnFacebook() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
+        }
+        
+        function shareOnTwitter() {
+            window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=Getting Around Hoi An - Complete Transport Guide', '_blank');
+        }
+        
+        function shareOnPinterest() {
+            window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href), '_blank');
+        }
+        
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert('Link copied to clipboard!');
+        }
+    </script>
+
+    
+</body>
+</html>

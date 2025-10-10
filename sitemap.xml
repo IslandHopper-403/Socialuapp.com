@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://hoi-an-social-app.web.app/</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- How It Works -->
+    <url>
+        <loc>https://hoi-an-social-app.web.app/how-it-works.html</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Blog Index -->
+    <url>
+        <loc>https://hoi-an-social-app.web.app/blog.html</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Blog Post: Lantern Festival -->
+    <url>
+        <loc>https://hoi-an-social-app.web.app/blog/hoi-an-lantern-festival-guide.html</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Blog Post: Getting Around -->
+    <url>
+        <loc>https://hoi-an-social-app.web.app/blog/getting-around-hoi-an-transport-guide.html</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Blog Post: Budget Guide -->
+    <url>
+        <loc>https://hoi-an-social-app.web.app/blog/hoi-an-on-20-dollars-day.html</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Blog Post: Food Guide -->
+    <url>
+        <loc>https://hoi-an-social-app.web.app/blog/10-best-local-foods-hoi-an.html</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Blog Post: Photography -->
+    <url>
+        <loc>https://hoi-an-social-app.web.app/blog/hoi-an-photography-guide.html</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Blog Post: Hidden Gems -->
+    <url>
+        <loc>https://hoi-an-social-app.web.app/blog/hoi-an-hidden-gems.html</loc>
+        <lastmod>2025-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+</urlset>
