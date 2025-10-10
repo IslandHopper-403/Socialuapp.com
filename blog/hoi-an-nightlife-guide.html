@@ -449,11 +449,29 @@
                 
                 <p><strong>Don't sleep on Hoi An's after-dark scene. Some of my best travel memories happened on these lantern-lit streets and moonlit beaches. See you out there! 🍻</strong></p>
 
-                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin: 40px 0;">
-                    <h3>📱 Want to Connect with Other Travelers?</h3>
-                    <p>Download SocialU to find travel buddies, discover local events, and get insider tips from people actually in Hoi An right now. It's like Tinder for making travel friends - see who's nearby and match based on travel style.</p>
-                    <a href="../index.html#download" class="btn-primary" style="display:inline-block; padding:12px 30px; margin-top:15px;">Download SocialU Free →</a>
+                  <!-- Article CTA -->
+            <section id="cta-section">
+                <div class="article-cta">
+                    <h3>Ready to Explore Hoi An?</h3>
+                    <p>Download SocialU to connect with other travelers, find cycling buddies, and discover the best routes from people exploring Hoi An right now</p>
+                    <a href="../index.html#download" class="btn-primary">Download Free App</a>
                 </div>
+            </section>
+
+        </div>
+
+        <!-- Social Share Buttons -->
+        <div class="container">
+            <div class="social-share">
+                <h4>Share This Guide:</h4>
+                <div class="share-buttons">
+                    <button onclick="shareOnFacebook()">📘 Facebook</button>
+                    <button onclick="shareOnTwitter()">🐦 Twitter</button>
+                    <button onclick="shareOnPinterest()">📌 Pinterest</button>
+                    <button onclick="copyLink()">🔗 Copy Link</button>
+                </div>
+            </div>
+        </div>
 
                 <h2>📚 Related Hoi An Guides</h2>
                 <p>Planning your Hoi An adventure? Check out these essential guides:</p>
@@ -560,5 +578,38 @@
     </footer>
 
     <script src="../javascript/blog.js"></script>
+
+         <!-- Scripts -->
+    <script src="../javascript/blog.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const headerNav = document.getElementById('headerNav');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                headerNav.classList.toggle('active');
+            });
+        }
+        
+        // Social sharing functions
+        function shareOnFacebook() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
+        }
+        
+        function shareOnTwitter() {
+            window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=Getting Around Hoi An - Complete Transport Guide', '_blank');
+        }
+        
+        function shareOnPinterest() {
+            window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href), '_blank');
+        }
+        
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert('Link copied to clipboard!');
+        }
+    </script>
 </body>
 </html>
