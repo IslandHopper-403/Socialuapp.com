@@ -346,5 +346,37 @@
     </footer>
 
     <script src="../javascript/blog.js"></script>
+
+<!-- Mobile Menu Toggle Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const headerNav = document.getElementById('headerNav');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                headerNav.classList.toggle('active');
+            });
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.main-header') && headerNav && headerNav.classList.contains('active')) {
+                mobileMenuToggle.classList.remove('active');
+                headerNav.classList.remove('active');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        if (headerNav) {
+            headerNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    headerNav.classList.remove('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
