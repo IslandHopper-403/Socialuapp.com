@@ -71,27 +71,27 @@
     </script>
 </head>
 <body class="article-page">
-    <!-- Navigation -->
-<header class="main-header" id="mainHeader">
-    <div class="header-container">
-        <a href="index.html" class="header-logo">SocialU</a>
-        
-        <!-- Mobile Menu Toggle -->
-        <div class="mobile-menu-toggle" id="mobileMenuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- Header Navigation -->
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">SocialU</a>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="header-nav" id="headerNav">
+                <a href="index.html" class="active">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="blog.html">Blog</a>
+                <a href="#download" class="btn-nav">Download App</a>
+            </nav>
         </div>
-        
-        <!-- Navigation -->
-        <nav class="header-nav" id="headerNav">
-            <a href="index.html">Home</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="blog.html" class="active">Blog</a>
-            <a href="index.html#download" class="btn-nav">Download App</a>
-        </nav>
-    </div>
-</header>
+    </header>
 
     <!-- Breadcrumb -->
     <div class="breadcrumb">
@@ -429,5 +429,37 @@
             </div>
         </div>
     </footer>
+    
+<!-- Mobile Menu Toggle Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const headerNav = document.getElementById('headerNav');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                headerNav.classList.toggle('active');
+            });
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.main-header') && headerNav && headerNav.classList.contains('active')) {
+                mobileMenuToggle.classList.remove('active');
+                headerNav.classList.remove('active');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        if (headerNav) {
+            headerNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    headerNav.classList.remove('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
