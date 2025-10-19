@@ -2,24 +2,20 @@
 <html lang="en">
 <head>
 
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX23VDV53B"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-WX23VDV53B', {
-    'linker': {
-      'domains': ['socialu.app', 'socialuapp.com']
-    }
-  });
+      gtag('config', 'G-WX23VDV53B');
     </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Complete Hoi An Travel Guide 2025 | SocialU Blog</title>
-
+    
     <!-- SEO Meta Tags -->
     <meta name="description" content="Your ultimate guide to Hoi An 2025. Discover the best beaches, restaurants, activities, and hidden gems. Includes budget tips, transportation guide, and local insider secrets.">
     <meta name="keywords" content="Hoi An guide 2025, Hoi An travel tips, best things to do Hoi An, Hoi An beach, Hoi An restaurants, Vietnam travel guide">
@@ -102,8 +98,8 @@
     </script>
 </head>
 <body class="article-page">
-    <!-- Header Navigation -->
-<header class="main-header" id="mainHeader">
+    <!-- Header Nav -->
+ <header class="main-header" id="mainHeader">
     <div class="header-container">
         <a href="index.html" class="header-logo">SocialU</a>
         
@@ -119,8 +115,7 @@
             <a href="index.html">Home</a>
             <a href="how-it-works.html">How It Works</a>
             <a href="blog.html" class="active">Blog</a>
-            <a href="https://socialu.app" class="btn-primary" target="_blank" rel="noopener noreferrer">Launch App</a>
-    </div>
+            <a href="https://socialu.app" class="btn-nav" target="_blank" rel="noopener noreferrer">Launch App</a>
         </nav>
     </div>
 </header>
@@ -197,7 +192,7 @@
                 </ul>
                 
                 <div class="pro-tip">
-                    <strong>💡 Pro Tip:</strong> Launch the SocialU app before you arrive to connect with other travelers and discover the best spots recommended by locals and long-term visitors.
+                    <strong>💡 Pro Tip:</strong> Join the SocialU app before you arrive to connect with other travelers and discover the best spots recommended by locals and long-term visitors.
                 </div>
             </section>
 
@@ -230,7 +225,8 @@
                 <div class="article-cta">
                     <h3>Ready to Experience Hoi An?</h3>
                     <p>Launch SocialU to connect with travelers, discover hidden gems, and get real-time recommendations from people exploring Hoi An right now</p>
-                    <a href="../index.html#download" class="btn-primary">Launch Free App</a>
+                    <a href="https://socialu.app" class="btn-primary btn-large" target="_blank" rel="noopener noreferrer">Launch SocialU →</a>
+    </div>
                 </div>
             </section>
 
@@ -343,6 +339,7 @@
                 <a href="../blog.html?category=food">Food Guides</a>
                 <a href="../blog.html?category=activities">Activities</a>
                 <a href="../blog.html?category=tips">Travel Tips</a>
+                 <a href="https://socialu.app" target="_blank" rel="noopener noreferrer">Launch App</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -351,37 +348,5 @@
     </footer>
 
     <script src="../javascript/blog.js"></script>
-
-<!-- Mobile Menu Toggle Script -->
-    <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const headerNav = document.getElementById('headerNav');
-        
-        if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenuToggle.classList.toggle('active');
-                headerNav.classList.toggle('active');
-            });
-        }
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.main-header') && headerNav && headerNav.classList.contains('active')) {
-                mobileMenuToggle.classList.remove('active');
-                headerNav.classList.remove('active');
-            }
-        });
-        
-        // Close mobile menu when clicking a link
-        if (headerNav) {
-            headerNav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenuToggle.classList.remove('active');
-                    headerNav.classList.remove('active');
-                });
-            });
-        }
-    </script>
 </body>
 </html>
