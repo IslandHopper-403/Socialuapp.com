@@ -1,57 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://socialuapp-com.vercel.app/</loc>
-<lastmod>2025-10-19</lastmod>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://socialuapp-com.vercel.app/how-it-works.html</loc>
-<lastmod>2025-10-19</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://socialuapp-com.vercel.app/blog.html</loc>
-<lastmod>2025-10-19</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://socialuapp-com.vercel.app/blog/hoi-an-lantern-festival-guide.html</loc>
-<lastmod>2025-10-19</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://socialuapp-com.vercel.app/blog/getting-around-hoi-an-transport-guide.html</loc>
-<lastmod>2025-10-19</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://socialuapp-com.vercel.app/blog/hoi-an-on-20-dollars-day.html</loc>
-<lastmod>2025-10-19</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://socialuapp-com.vercel.app/blog/10-best-local-foods-hoi-an.html</loc>
-<lastmod>2025-10-19</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://socialuapp-com.vercel.app/blog/hoi-an-photography-guide.html</loc>
-<lastmod>2025-10-19</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://socialuapp-com.vercel.app/blog/hoi-an-hidden-gems.html</loc>
-<lastmod>2025-10-19</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
+    <!-- Homepage -->
+    <url>
+        <loc>https://socialuapp.com/</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- How It Works Page -->
+    <url>
+        <loc>https://socialuapp.com/how-it-works.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Blog Hub -->
+    <url>
+        <loc>https://socialuapp.com/blog.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Blog Posts -->
+    <url>
+        <loc>https://socialuapp.com/blog/10-best-local-foods-hoi-an.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://socialuapp.com/blog/best-free-cheap-activities-hoi-an.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://socialuapp.com/blog/getting-around-hoi-an-transport-guide.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://socialuapp.com/blog/hoi-an-day-trips-guide.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://socialuapp.com/blog/hoi-an-hidden-gems.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://socialuapp.com/blog/hoi-an-lantern-festival-guide.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://socialuapp.com/blog/hoi-an-nightlife-guide.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://socialuapp.com/blog/hoi-an-on-20-dollars-day.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://socialuapp.com/blog/hoi-an-photography-guide.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://socialuapp.com/blog/ultimate-hoi-an-guide-2025.html</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
